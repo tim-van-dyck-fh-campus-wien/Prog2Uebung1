@@ -50,7 +50,7 @@ public class PasswordValidatorTest {
     @Test
     @DisplayName("Passowrd contains no letters")
     public void CheckPasswordCapitals_case4(){
-        String pwd="12#112#12";
+        String pwd="12#12#12#1";
         assertFalse(pw.checkPassword(pwd));
     }
     @Test
@@ -59,6 +59,18 @@ public class PasswordValidatorTest {
         String pwd="as#as#ff";
         assertFalse(pw.checkPassword(pwd));
     }
+    @Test
+    @DisplayName("Password contains allowed special characters")
+    public void CheckPasswordSpecialCharacter_case1(){
+        String pwd="()#$?!%/@A1";
+        assertTrue(pw.checkPassword(pwd));
+    }
+    @Test
+    @DisplayName("Password contains no special characters")
+    public void CheckPasswordSpecialCharacter_case2() {
+        String pwd="A1b1C1d1f";
+        assertFalse(pw.checkPassword(pwd));
 
+    }
 
 }
