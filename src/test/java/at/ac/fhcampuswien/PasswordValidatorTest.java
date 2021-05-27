@@ -47,6 +47,12 @@ public class PasswordValidatorTest {
         String pwd="As#1as#1f";
         assertTrue(pw.checkPassword(pwd));
     }
+    @Test
+    @DisplayName("Passowrd contains no letters")
+    public void CheckPasswordCapitals_case4(){
+        String pwd="12#112#12";
+        assertFalse(pw.checkPassword(pwd));
+    }
 
 
 

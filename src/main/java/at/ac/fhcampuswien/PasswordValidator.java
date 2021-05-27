@@ -7,7 +7,8 @@ public class PasswordValidator {
         }
         return false;
     }
-    public boolean checkPwdLength(String pwd){
+    private boolean checkPwdLength(String pwd){
         return (pwd.length()>=8)&&(pwd.length()<=25);
     }
+
 }
