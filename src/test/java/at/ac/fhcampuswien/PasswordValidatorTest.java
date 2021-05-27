@@ -26,7 +26,7 @@ public class PasswordValidatorTest {
     @Test
     @DisplayName("Password length correct")
     public void CheckPasswordLength_case3(){
-        String pwd="as#1as#1f";
+        String pwd="aS#1as#1f";
         assertTrue(pw.checkPassword(pwd));
     }
     @Test
