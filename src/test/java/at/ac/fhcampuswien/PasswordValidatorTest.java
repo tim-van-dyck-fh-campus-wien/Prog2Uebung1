@@ -17,11 +17,13 @@ public class PasswordValidatorTest {
         String pwd = "aS#1";
         assertFalse(pw.checkPassword(pwd));
     }
+    @Test
     @DisplayName("Password to long")
     public void CheckPasswordLength_case2(){
         String pwd = "aS#1aaS#1aaS#1aaS#1aaS#1aff";
         assertFalse(pw.checkPassword(pwd));
     }
+    @Test
     @DisplayName("Password length correct")
     public void CheckPasswordLength_case3(){
         String pwd="as#1as#1f";
