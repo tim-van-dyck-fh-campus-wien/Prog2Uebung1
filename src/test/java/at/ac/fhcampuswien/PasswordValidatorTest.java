@@ -29,5 +29,25 @@ public class PasswordValidatorTest {
         String pwd="as#1as#1f";
         assertTrue(pw.checkPassword(pwd));
     }
+    @Test
+    @DisplayName("Passwords letters all capital")
+    public void CheckPasswordCapitals_case1(){
+        String pwd="AS#1AS#1F";
+        assertFalse(pw.checkPassword(pwd));
+    }
+    @Test
+    @DisplayName("Passwords letters all small")
+    public void CheckPasswordCapitals_case2(){
+        String pwd="as#1as#1f";
+        assertFalse(pw.checkPassword(pwd));
+    }
+    @Test
+    @DisplayName("Passwords letters are capitals, and small ones")
+    public void CheckPasswordCapitals_case3(){
+        String pwd="As#1as#1f";
+        assertTrue(pw.checkPassword(pwd));
+    }
+
+
 
 }
