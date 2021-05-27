@@ -62,7 +62,7 @@ public class PasswordValidatorTest {
     @Test
     @DisplayName("Password contains allowed special characters")
     public void CheckPasswordSpecialCharacter_case1(){
-        String pwd="()#$?!%/@A1";
+        String pwd="()#$?!%/@Aa1";
         assertTrue(pw.checkPassword(pwd));
     }
     @Test

@@ -1,5 +1,7 @@
 package at.ac.fhcampuswien;
 
+import java.util.HashSet;
+
 public class PasswordValidator {
     public  boolean checkPassword(String pwd){
         if(checkPwdLength(pwd)){
@@ -34,9 +36,22 @@ public class PasswordValidator {
         for(int c=0;(c<pwd.length());c++) {
             char curChar = pwd.charAt(c);
             if(Character.isDigit(curChar)){
+                if(checkPasswordSpecialCharacters(pwd)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    private boolean checkPasswordSpecialCharacters(String pwd) {
+
+        for (int c = 0; (c < pwd.length()); c++) {
+            char curChar = pwd.charAt(c);
+            if ("()#$?!%/@".indexOf(curChar)!=-1) {
                 return true;
             }
         }
         return false;
     }
+
 }
