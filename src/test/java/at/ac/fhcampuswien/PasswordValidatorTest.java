@@ -72,5 +72,11 @@ public class PasswordValidatorTest {
         assertFalse(pw.checkPassword(pwd));
 
     }
+    @Test
+    @DisplayName("To many numbers in a row")
+    public void CheckPasswordNumberRow_case1(){
+        String pwd="aS#1as#123";
+        assertFalse(pw.checkPassword(pwd));
+    }
 
 }
