@@ -4,7 +4,9 @@ public class PasswordValidator {
     public  boolean checkPassword(String pwd){
         if(checkPwdLength(pwd)){
             if(checkCorrectCapitalization(pwd)){
-                return true;
+                if(checkPasswordContainsNumbers(pwd)){
+                    return true;
+                }
             }
         }
         return false;
@@ -27,5 +29,14 @@ public class PasswordValidator {
             }
         }
         return containsCapitals&containsSmallLetters;
+    }
+    private boolean checkPasswordContainsNumbers(String pwd){
+        for(int c=0;(c<pwd.length());c++) {
+            char curChar = pwd.charAt(c);
+            if(Character.isDigit(curChar)){
+                return true;
+            }
+        }
+        return false;
     }
 }
