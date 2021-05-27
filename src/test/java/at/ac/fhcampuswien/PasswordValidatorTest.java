@@ -53,7 +53,12 @@ public class PasswordValidatorTest {
         String pwd="12#112#12";
         assertFalse(pw.checkPassword(pwd));
     }
-
+    @Test
+    @DisplayName("Password contains no numbers")
+    public void CheckPasswordNumbers_case1(){
+        String pwd="as#as#ff";
+        assertFalse(pw.checkPassword(pwd));
+    }
 
 
 }
